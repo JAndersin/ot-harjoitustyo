@@ -28,3 +28,5 @@ Date:   Tue Mar 23 16:17:54 2021 +0200
 
  ot_viikko1/eka.txt    | 2 +-
  ot_viikko1/kolmas.txt | 1 +
+ 
+ edit
