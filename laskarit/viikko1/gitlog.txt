@@ -1,0 +1,30 @@
+ot2021>git log --stat
+commit 0dcb3fd49baa44af651ae7153e5c5c76beb004cc (HEAD -> main)
+Author: 
+Date:   Tue Mar 23 16:20:46 2021 +0200
+
+    removed file1 and renamed file2
+
+ ot_viikko1/tiedostoja/file2.txt                  | 0
+ ot_viikko1/tiedostoja/{file 1.txt => file22.txt} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 12a48b64e511643160b2710d3e46c68142676e9b
+Author: 
+Date:   Tue Mar 23 16:20:09 2021 +0200
+
+    added tiedostoja
+
+ ot_viikko1/tiedostoja/file 1.txt | 0
+ ot_viikko1/tiedostoja/file2.txt  | 0
+ ot_viikko1/tiedostoja/file3.txt  | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit bba81f7effb4fb7cbf1dfb3e0997b0c56fb1a6bd
+Author: 
+Date:   Tue Mar 23 16:17:54 2021 +0200
+
+    edited eka and kolmas
+
+ ot_viikko1/eka.txt    | 2 +-
+ ot_viikko1/kolmas.txt | 1 +
