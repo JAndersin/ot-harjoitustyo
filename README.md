@@ -2,7 +2,7 @@
 
 ## Dokumentaatio
 
-[Vaatimusmäärittely] (https://github.com/JAndersin/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
+[Vaatimusmäärittely](https://github.com/JAndersin/ot-harjoitustyo/blob/main/dokumentaatio/vaatimusmaarittely.md)
 
 
 
