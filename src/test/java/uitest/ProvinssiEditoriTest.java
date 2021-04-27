@@ -1,5 +1,8 @@
 package uitest;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import json.ProvinceParser;
 import org.json.simple.JSONObject;
 import org.junit.After;
@@ -49,5 +52,16 @@ public class ProvinssiEditoriTest {
         int ownerID = Integer.valueOf(provOwner);
         assertEquals(242, ownerID);
         
+    }
+    
+    @Test
+    public void ResetProvinceJSON() {
+        ProvinceParser.resetProvinceData();
+        try {              
+            String content = new String(Files.readAllBytes(Paths.get("src/main/java/json/provinces.json")));
+            assertEquals("[]", content);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

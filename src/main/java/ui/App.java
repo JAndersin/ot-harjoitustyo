@@ -2,6 +2,7 @@ package ui;
 
 import json.ProvinceParser;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
@@ -19,29 +20,33 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Image mapImage = new Image("file:src/main/java/ui/map.bmp");
-
+        
+        Image mapImage = new Image("map.bmp");
+        
         ImageView imageView = new ImageView(mapImage);
         imageView.setPreserveRatio(true);
-
-        HBox info = Interface.showSelected(prov, 0);
-        Pane map = new Pane(imageView);
-        ScrollPane scrollPane = new ScrollPane(map);
+        HBox info = Interface.displayInformation(prov, 0, 0, 0, 0);
         
         imageView.setOnMousePressed(e -> {
             if (e.isPrimaryButtonDown()) {
+                
+                // if mouse1 pressed read pixel color at cursor location and then try to read relevant info
+                // about that color from the provinces.JSON file and display it to user by replacing currently
+                // displayed information
+                
                 PixelReader pixelreader = mapImage.getPixelReader();
                 Color color = pixelreader.getColor((int) e.getX(), (int) e.getY());
                 int provinceColor = Integer.valueOf("" + (int) (color.getRed() * 255) + (int) (color.getGreen() * 255) + (int) (color.getBlue() * 255));
-                System.out.println("RGB Value of the selection: " + provinceColor);
                 prov = ProvinceParser.getProvince(provinceColor);
-                System.out.println(prov);
                 info.getChildren().clear(); 
-                HBox info2 = Interface.showSelected(prov, provinceColor);
-                info.getChildren().add(info2);
+                HBox newInfo = Interface.displayInformation(prov, provinceColor, (int) (color.getRed() * 255), (int) (color.getGreen() * 255), (int) (color.getBlue() * 255));
+                info.getChildren().add(newInfo);
             }
         });
         
+        Pane map = new Pane(imageView);
+        ScrollPane scrollPane = new ScrollPane(map);
+        info.setPadding(new Insets(10));
         HBox root = new HBox(scrollPane, info);
         stage.setScene(new Scene(root));
         stage.setTitle("Province Data Editor");

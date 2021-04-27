@@ -1,5 +1,6 @@
 package json;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,7 +17,10 @@ public class ProvinceParser {
     }
     
     public static JSONObject getProvince(int color) {
-
+        
+        // create dummy JSONObject to display if provided color has no
+        // associated information stored
+        
         JSONParser parser = new JSONParser();
         JSONObject nullResult = new JSONObject();
         nullResult.put("color", "0");
@@ -28,10 +32,13 @@ public class ProvinceParser {
         nullResult.put("cultureid", "0");
         nullResult.put("resourceid", "0");
 
-        try (Reader reader = new FileReader("src/main/java/json/provinces.json")) {
+        try (Reader reader = new FileReader(new File("src/main/java/json/provinces.json"))) {
 
             JSONArray jsonObject = (JSONArray) parser.parse(reader);
 
+            // check if color exists in the JSON file and return it's information
+            // if so
+            
             if (jsonObject != null) {
                 for (int i = 0; i < jsonObject.size(); i++) {
                     JSONObject result = (JSONObject) jsonObject.get(i);
@@ -60,6 +67,10 @@ public class ProvinceParser {
         int colorvalue = Integer.valueOf(color);
         
         try (Reader reader = new FileReader("src/main/java/json/provinces.json")) {
+            
+            // check if color exists in the JSON file and remove the old data if
+            // it does then add or re-add the information for a province
+            
             jsonObject = (JSONArray) parser.parse(reader);
             if (jsonObject != null) {
                 for (int i = 0; i < jsonObject.size(); i++) {
@@ -81,6 +92,17 @@ public class ProvinceParser {
         
         try (FileWriter file = new FileWriter("src/main/java/json/provinces.json")) {
             file.write(jsonObject.toJSONString()); 
+            file.flush();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static void resetProvinceData() {
+        
+        try (FileWriter file = new FileWriter("src/main/java/json/provinces.json")) {
+            file.write("[]"); 
             file.flush();
  
         } catch (IOException e) {

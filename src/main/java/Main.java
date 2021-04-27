@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 import ui.App;
 
 public class Main {
