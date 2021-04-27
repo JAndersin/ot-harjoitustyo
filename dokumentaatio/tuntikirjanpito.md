@@ -7,3 +7,6 @@
 | 13.4. | 3    | ohjelman rungon suunnittelua ja alustavaa toteutusta |
 | 20.4. | 4    | Javan JSON-kirjastoihin tutustumista |
 | 20.4. | 3    | JSON-toiminnallisuuden lisääminen sovellukseen |
+| 27.4. | 5    | Lisätty ominaisuuksia kuten tietojen nollaus |
+| -|-|- |
+| Yht | 20    |
