@@ -11,16 +11,18 @@ Sovelluksen käyttöliittymä koostuu piirretystä kartasta sekä informaatioikk
 
 ## Perusversion tarjoama toiminnallisuus
 
-- käyttäjä kykenee valitsemaan hiiren klikkauksella provinssin ohjelman piirtämältä kartalta
+- käyttäjä kykenee valitsemaan hiiren klikkauksella provinssin ohjelman piirtämältä kartalta [Tehty]
 
-- käyttäjälle tulostetaan ohjelmassa provinssin tiedot
+- käyttäjälle tulostetaan ohjelmassa provinssin tiedot [Tehty]
 
-- käyttäjä pystyy muuttamaan annettuja tietoja
+- käyttäjä pystyy muuttamaan annettuja tietoja [Tehty]
 
-- käyttäjä kykenee tallentamaan muutetut tiedot
+- käyttäjä kykenee tallentamaan muutetut tiedot [Tehty]
 
 ## Jatkokehitysideoita
 
 Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seuraavilla toiminnallisuuksilla
 
 - uuden muuttujan lisäys
+
+- tietojen nollaus [Tehty]
