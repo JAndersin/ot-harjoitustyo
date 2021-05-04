@@ -1,5 +1,6 @@
 package ui;
 
+import java.io.File;
 import json.ProvinceParser;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -10,19 +11,21 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
+import json.FileSystem;
 import org.json.simple.JSONObject;
+
+/**
+ * Luokka huolehtii ohjelman oikean laidan käyttöliittymän piirtämisestä.
+ */
 
 public class Interface {
     
-    public static HBox displayInformation(JSONObject obj, int color, int r, int g, int b) {
+    public static HBox displayInformation(JSONObject obj, int color, int r, int g, int b, FileSystem fileSystem) {
         
-        // create a rectangle to display currently selected color
-        
-        Rectangle colorDisplay = new Rectangle(60,20);
-        Color c = Color.rgb(r,g,b);   
+        Rectangle colorDisplay = new Rectangle(60, 20);
+        Color c = Color.rgb(r, g, b);   
         colorDisplay.setFill(c);
-        
-        // create textfields to display information and to enable editing it 
         
         Text text1 = new Text("Provinssin nimi: ");
         String provName = (String) obj.get("name");
@@ -58,9 +61,6 @@ public class Interface {
         String provResource = (String) obj.get("resourceid");
         TextField textfield7 = new TextField(provResource);
         VBox info7 = new VBox(10, text7, textfield7);
-
-        // create button to save current information to the JSON file
-        // create JSONObject and input values from every textfield to it
         
         Button save = new Button("Tallenna");
 
@@ -75,11 +75,19 @@ public class Interface {
             result.put("cultureid", (textfield2.getText()));
             result.put("resourceid", (textfield2.getText()));
             
-            ProvinceParser.saveProvince(result);
+            ProvinceParser.saveProvince(result, fileSystem.jsonFile);
         });
         
-        // create a reset button to clear the JSON file, also display
-        // a warning to user to avoid accidental wipes
+        Button open = new Button("Avaa");
+        open.setOnAction(e -> {
+            FileChooser fileChooser = new FileChooser();
+            File userDirectory = new File("./");
+            fileChooser.setInitialDirectory(userDirectory);
+            File file = fileChooser.showOpenDialog(null);
+            if (file != null) {
+                FileSystem.setJsonFile(file);
+            }
+        });
         
         Button reset = new Button("Nollaa kaikki tiedot");
 
@@ -89,15 +97,13 @@ public class Interface {
             alert.setHeaderText("Oletko varma, että haluat nollata kaikki tiedot?");
             alert.showAndWait().ifPresent(response -> {
                 if (response == ButtonType.OK) {
-                    ProvinceParser.resetProvinceData();
+                    ProvinceParser.resetProvinceData(fileSystem.jsonFile);
                 }
             });
             
         });
         
-        // stack every children to it's parent and return the whole panel
-        
-        VBox content = new VBox(10, colorDisplay, info1, info2, info3, info4, info5, info6, info7, save, reset);
+        VBox content = new VBox(10, colorDisplay, info1, info2, info3, info4, info5, info6, info7, save, reset, open);
         HBox information = new HBox(40, content);
         return information;
     }
