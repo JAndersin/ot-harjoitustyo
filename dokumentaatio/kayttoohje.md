@@ -14,7 +14,7 @@ java -jar ot-harjoitustyo-1.0-SNAPSHOT.jar
 
 ## Sovelluksen käytön aloitus
 
-Aluksi käyttäjän on valittava JSON-tiedosto johon haluaa tiedon tallentaa painamalla oikean laidan "Avaa" painiketta.
+Aluksi käyttäjän on valittava JSON-tiedosto johon haluaa tiedon tallentaa painamalla oikean laidan "Avaa" painiketta. Mikäli latasit tiedoston provinces.JSON voit käyttää sitä.
 
 ## Provinssin tietojen muokkaus
 
