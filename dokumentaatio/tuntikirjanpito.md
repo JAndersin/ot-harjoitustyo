@@ -8,5 +8,9 @@
 | 20.4. | 4    | Javan JSON-kirjastoihin tutustumista |
 | 20.4. | 3    | JSON-toiminnallisuuden lisääminen sovellukseen |
 | 27.4. | 5    | Lisätty ominaisuuksia kuten tietojen nollaus |
+| 30.4. | 1    | Laajennettu sekä kirjoitettu uusiksi testejä |
+| 30.4. | 2    | Tutkittu JavaFX kirjaston tiedostoselain-ominaisuuksia |
+| 30.4. | 1    | Lisätty alustava javadoc |
+| 30.4. | 3    | Laajennettu ohjelman toiminnallisuutta niin |
 | -|-|- |
-| Yht | 20    |
+| Yht | 26    |
