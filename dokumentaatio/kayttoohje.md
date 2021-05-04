@@ -1,7 +1,7 @@
 # Käyttöohje
 
 Lataa tiedostot 
-[ot-harjoitustyo-1.0-SNAPSHOT.jar](https://github.com/JAndersin/ot-harjoitustyo/releases/tag/viikko6)
+[ot-harjoitustyo-1.0-SNAPSHOT.jar](https://github.com/JAndersin/ot-harjoitustyo/releases/tag/viikko6) & 
 [provinces.JSON](https://github.com/JAndersin/ot-harjoitustyo/releases/tag/viikko6)
 
 ## Ohjelman käynnistäminen
