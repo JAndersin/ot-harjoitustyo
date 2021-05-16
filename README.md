@@ -16,5 +16,38 @@ Java versio 11.
 
 [Arkkitehtuuri](https://github.com/JAndersin/ot-harjoitustyo/blob/main/dokumentaatio/arkkitehtuuri.md)
 
+## Komentorivinkomennot
+
+```
+mvn test
+```
+
+Suorittaa testit.
+
+```
+mvn jacoco:report
+```
+
+Luo testikattavauusraportin kohteeseen "target/site/jacoco.
+
+```
+mvn package
+```
+
+Luo suositettavan .jar tiedoston "ot-harjoitustyo-1.0-SNAPSHOT.jar" kohteeseen "target"
+
+```
+mvn javadoc:javadoc
+```
+
+Luo javadocin kohteeseen "target/site/apidocs.
+
+```
+ mvn jxr:jxr checkstyle:checkstyle
+```
+
+Luo checkstyleraportin kohteeseen "target/site"
+
+
 
 
