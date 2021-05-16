@@ -2,6 +2,10 @@
 
 Sovellus on työkalu helpottamaan bittikarttapohjaisen strategiapelin JSON-tiedostoihin tallennettujen olioiden tarkastelua ja muokkausta. 
 
+## Vaatimukset
+
+Java versio 11.
+
 ## Dokumentaatio
 
 [Käyttöohje](https://github.com/JAndersin/ot-harjoitustyo/blob/main/dokumentaatio/kayttoohje.md)
