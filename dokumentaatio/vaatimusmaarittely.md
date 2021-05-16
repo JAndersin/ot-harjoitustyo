@@ -26,3 +26,5 @@ Perusversion jälkeen järjestelmää täydennetään ajan salliessa esim. seura
 - uuden muuttujan lisäys
 
 - tietojen nollaus [Tehty]
+
+- uusien tiedostojen valinta lennossa [Tehty]
