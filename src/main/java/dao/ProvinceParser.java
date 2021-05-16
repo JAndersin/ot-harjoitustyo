@@ -1,4 +1,4 @@
-package json;
+package dao;
 
 import java.io.File;
 import java.io.FileReader;
@@ -16,10 +16,11 @@ import org.json.simple.parser.ParseException;
  */
 
 public class ProvinceParser {
-    
-    public static void main(String[] args) {
 
-    }
+    /**
+    * Metodi palauttaa annettua väriarvoa vastaavan provinssi-olion tiedot annetusta tiedostosta.
+    * Jos väriarvoa vastaavaa oliota ei ole, palautetaan määritelty default-olio.
+    */
     
     public static JSONObject getProvince(int color, File file) {
         
@@ -58,6 +59,11 @@ public class ProvinceParser {
         return nullResult;
     }
     
+    /**
+    * Metodi tallentaa annetun JSONObject-olion JSON muotoisena annettuun tiedostoon.
+    * Jos JSONObjectia vastaava olio on jo olemassa korvataan sen arvot tiedostossa.
+    */
+    
     public static void saveProvince(JSONObject obj, File file) {
 
         JSONParser parser = new JSONParser();
@@ -94,6 +100,10 @@ public class ProvinceParser {
             e.printStackTrace();
         }
     }
+    
+    /**
+    * Metodi nollaa annetun JSON-tiedoston.
+    */
     
     public static void resetProvinceData(File file) {
         

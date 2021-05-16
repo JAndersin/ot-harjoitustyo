@@ -1,7 +1,12 @@
-package ui;
+package main;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import ui.SceneHandler;
+
+/**
+ * Luokka toimii sovelluksen varsinaisena pääluokkana jonka ainoa tehtävä on pitää huolta ohjelman stagen piirtämisestä ja tarvittaessa palauttaa se.
+ */
 
 public class App extends Application {
 
@@ -19,7 +24,11 @@ public class App extends Application {
         
     }
     
-    public static Stage getStage(){
+    /**
+    * Metodi palauttaa ohjelman nykyisen stage-muuttujan.
+    */
+    
+    public static Stage getStage() {
         return stage;
     }
 

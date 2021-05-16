@@ -1,5 +1,6 @@
-package json;
+package dao;
 
+import dao.FileSystem;
 import java.io.File;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -25,8 +26,11 @@ public class FileSystemTest {
     
     @Before
     public void setUp() {
-        File newFile = new File("src/test/java/json/provinces.JSON");
+        File newFile = new File("src/test/java/dao/provinces.JSON");
         expectedFileSystem.setJsonFile(newFile);
+        
+        File newImgFile = new File("src/test/java/dao/map.bmp");
+        expectedFileSystem.setImageFile(newImgFile);
     }
     
     @After
@@ -36,7 +40,7 @@ public class FileSystemTest {
     @Test
     public void testSetJsonFile() {
         FileSystem testFileSystem = new FileSystem();
-        File newFile = new File("src/test/java/json/provinces.JSON");
+        File newFile = new File("src/test/java/dao/provinces.JSON");
         testFileSystem.setJsonFile(newFile);
         assertEquals(expectedFileSystem.returnJsonFile(), testFileSystem.returnJsonFile());
     }
@@ -44,10 +48,28 @@ public class FileSystemTest {
     @Test
     public void testReturnJsonFile() {
         FileSystem testFileSystem = new FileSystem();
-        File newFile = new File("src/test/java/json/provinces.JSON");
+        File newFile = new File("src/test/java/dao/provinces.JSON");
         testFileSystem.setJsonFile(newFile);
         File returnedFile = testFileSystem.returnJsonFile();
         
         assertEquals(expectedFileSystem.returnJsonFile(), returnedFile);
+    }
+    
+    @Test
+    public void testSetImageFile() {
+        FileSystem testFileSystem = new FileSystem();
+        File newFile = new File("src/test/java/dao/map.bmp");
+        testFileSystem.setImageFile(newFile);
+        assertEquals(expectedFileSystem.returnImageFile(), testFileSystem.returnImageFile());
+    }
+
+    @Test
+    public void testReturnImageFile() {
+        FileSystem testFileSystem = new FileSystem();
+        File newFile = new File("src/test/java/dao/map.bmp");
+        testFileSystem.setImageFile(newFile);
+        File returnedFile = testFileSystem.returnImageFile();
+        
+        assertEquals(expectedFileSystem.returnImageFile(), returnedFile);
     }
 }

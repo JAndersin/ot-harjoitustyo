@@ -12,5 +12,11 @@
 | 30.4. | 2    | Tutkittu JavaFX kirjaston tiedostoselain-ominaisuuksia |
 | 30.4. | 1    | Lisätty alustava javadoc |
 | 30.4. | 3    | Laajennettu ohjelman toiminnallisuutta niin |
+| 12.4. | 2    | tutustuminen JavaFX-kirjaston scene- ja filechooserluokkiin |
+| 9.5. | 5    | Lisätty SceneHandler-luokka ja siihen liittyvä alustava toiminnallisuus |
+| 12.4. | 3    | Selkeytetty tiedostojen valintaa ja lisätty alkuruutu |
+| 16.4. | 4    | Poistettu toisteisuutta ja siivottu muutenkin koodia |
+| 16.4. | 1    | Testikattavuutta lisätty ja paranneltu suorittamaan testit halutussa järjestyksessä |
+
 | -|-|- |
-| Yht | 26    |
+| Yht | 41    |

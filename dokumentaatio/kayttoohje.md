@@ -14,14 +14,21 @@ java -jar ot-harjoitustyo-1.0-SNAPSHOT.jar
 
 ## Sovelluksen käytön aloitus
 
-Aluksi käyttäjän on valittava JSON-tiedosto johon haluaa tiedon tallentaa painamalla oikean laidan "Avaa" painiketta. Mikäli latasit tiedoston provinces.JSON voit käyttää sitä.
+Aluksi käyttäjän on valittava JSON-tiedosto johon haluaa tiedon tallentaa painamalla "Open JSON" painiketta. 
+Sen jälkeen valitaan käytettävä bmp-muotoinen karttatiedosto painamalla "Open map".
+Mikäli latasit tiedostot provinces.JSON ja map.bmp voit käyttää niitä.
+Lopuksi painetaan "Continue"
 
 ## Provinssin tietojen muokkaus
 
-Käyttäjän valittua JSON-tiedosto voidaan siirtyä muokkaamaan kartan tietoja. Valitaan ensin hiiren vasemmalla painikkeella mikä tahansa provinssi kartalla.
+Valitseaksesi minkä tahansa provinssin kartalta paina sitä hiiren vasemmalla painikkeella.
 Sen jälkeen ohjelma tulostaa oikean laidan infoikkunaan siihen liittyvät tiedot mikäli ne ovat olemassa, muulloin arvot ovat vakiona "0" tai "null" nimen kohdalla.
 Muokattuasi tietoja ne tallennetaan oikean laidan painikkeella "Tallenna", ohjelma tallentaa valitsemasi tiedoston päälle automaattisesti.
 
 ## JSON-tiedoston nollaus
 
 JSON-tiedoston voi alustaa ohjelman käyttöön valitsemalla tiedosto ja sen jälkeen painamalla oikean laidan paniniketta "Nollaa kaikki tiedot"
+
+## Uusien tiedostojen valinta ohjelman ollessa käynnissä
+
+Voit valita oikean laidan "Open new JSON" ja "Open new map" painikkeilla lennosta uudet tiedostot.

@@ -1,4 +1,4 @@
-import ui.App;
+package main;
 
 public class Main {
 

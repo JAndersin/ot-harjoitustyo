@@ -1,5 +1,6 @@
 package ui;
 
+import main.App;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -12,9 +13,13 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import json.FileSystem;
-import json.ProvinceParser;
+import dao.FileSystem;
+import dao.ProvinceParser;
 import org.json.simple.JSONObject;
+
+/**
+ * Luokka huolehtii Scenejen rakentamisesta ja niiden lähettämisestä App-luokalle.
+ */
 
 public class SceneHandler {
     
@@ -22,7 +27,11 @@ public class SceneHandler {
     static FileSystem fileSystem = new FileSystem();
     private static Stage stage;
     
-    public static void startScene(){
+    /**
+    * Metodi rakentaa alkuruudun ohjelmalle.
+    */
+    
+    public static void startScene() {
         
         HBox root = new HBox(Interface.startUI());
         root.setAlignment(Pos.CENTER);
@@ -31,7 +40,12 @@ public class SceneHandler {
         App.getStage().setMinWidth(800);
     }    
     
-    public static void mainScene(Image image){
+    /**
+    * Metodi rakentaa pääruudun ohjelmalle.
+    * Pitää lisäksi kirjaa klikataanko Scenen sisältämää imageView oliota ja toteuttaa siihen liittyvät toiminnallisuudet.
+    */
+    
+    public static void mainScene(Image image) {
         
         ImageView imageView = new ImageView(image);
 
@@ -41,7 +55,7 @@ public class SceneHandler {
         imageView.setOnMousePressed(e -> {
             if (e.isPrimaryButtonDown()) {
                 
-                if (fileSystem.jsonFile.getPath().length() > 0){
+                if (fileSystem.jsonFile.getPath().length() > 0) {
                     PixelReader pixelreader = image.getPixelReader();
                     Color color = pixelreader.getColor((int) e.getX(), (int) e.getY());
                     int provinceColor = Integer.valueOf("" + (int) (color.getRed() * 255) + (int) (color.getGreen() * 255) + (int) (color.getBlue() * 255));
@@ -51,7 +65,7 @@ public class SceneHandler {
                     info.getChildren().add(newInfo);
                 } else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setHeaderText("Ole hyvä ja valitse ensin JSON-tiedosto painamalla Avaa.");
+                    alert.setHeaderText("Please select a JSON-file first by pressing Open JSON.");
                     alert.show();
                 }
             }
