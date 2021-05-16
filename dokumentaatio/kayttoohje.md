@@ -9,7 +9,7 @@ Lataa tiedostot
 Ohjelma käynnistetään komennolla 
 
 ```
-java -jar ot-harjoitustyo-1.0-SNAPSHOT.jar
+java -jar ProvinceEditor.jar
 ```
 
 ## Sovelluksen käytön aloitus
